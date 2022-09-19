@@ -10,7 +10,7 @@ let currentValue = document.getElementById('currentStockPrice').value;
 let previousValue = document.getElementById('previousStockPrice').value;
 let takeHomePay = document.getElementById('takeHomePay').value;
 let percentToPlan = (document.getElementById('percentToESPP').value / 100)
-let availableFunds = (takeHomePay * percentToPlan) * 6;
+let availableFunds = (takeHomePay * percentToPlan) * 12;
 
 /*
 console.log(currentValue);
@@ -66,7 +66,7 @@ let currentValue = document.getElementById('currentStockPrice2').value;
 let previousValue = document.getElementById('previousStockPrice2').value;
 let takeHomePay = document.getElementById('takeHomePay2').value;
 let percentToPlan = (document.getElementById('percentToESPP2').value / 100)
-let availableFunds = (takeHomePay * percentToPlan) * 12;
+let availableFunds = (takeHomePay * percentToPlan) * 6;
 
 
 console.log(currentValue);
