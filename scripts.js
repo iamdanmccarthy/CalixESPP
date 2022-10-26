@@ -33,8 +33,8 @@ const stockPriceFinder = (currentValue, previousValue) => {
     } let finalPrice = yourPrice * 0.85;
     return (finalPrice);
 }
-
-//console.log(stockPriceFinder(currentValue, previousValue));
+console.log("this number is the final price")
+console.log(stockPriceFinder(currentValue, previousValue));
 
 
 let purchasedShares = availableFunds / stockPriceFinder(currentValue, previousValue);
@@ -42,7 +42,7 @@ console.log(`You are buying ${purchasedShares} shares with ${formatter.format(av
 
 let totalShares = purchasedShares
 
-let finalValue = totalShares * currentValue;
+let finalValue = totalShares * previousValue;
 let difference = finalValue - availableFunds;
 
 console.log(`Your shares will be worth ${formatter.format(finalValue)} after 6 months, which means your initial ${formatter.format(availableFunds)} will have made you an additional ${formatter.format(difference)}.`);
@@ -63,9 +63,10 @@ console.log(`Your shares will be worth ${formatter.format(finalValue)} after 6 m
 const runUnqualifiedESPP = () => {
 
 let currentValue = document.getElementById('currentStockPrice2').value;
-let previousValue = document.getElementById('previousStockPrice2').value;
+let previousValue = currentValue;
 let takeHomePay = document.getElementById('takeHomePay2').value;
 let percentToPlan = (document.getElementById('percentToESPP2').value / 100)
+let oneYearPrice = document.getElementById('oneYearPrice').value;
 let availableFunds = (takeHomePay * percentToPlan) * 6;
 
 
@@ -101,13 +102,19 @@ let totalShares = purchasedShares * 2;
 
 let finalValue = totalShares * currentValue;
 let difference = finalValue - availableFunds;
+let oneYearValue = totalShares * oneYearPrice;
+//let lastValue = oneYearValue - availableFunds;
+let totalIncrease = oneYearValue - (availableFunds * 2);
 
 console.log(`Your shares will be worth ${formatter.format(finalValue)} after 3 months, which means your initial ${formatter.format(availableFunds)} will have made you an additional ${formatter.format(difference)}.`);
+console.log(`In one year, your stock will be worth ${formatter.format(oneYearValue)}`);
 
+document.getElementById('totalEarnings2').innerHTML = formatter.format(oneYearValue);
 
-document.getElementById('totalEarnings2').innerHTML = formatter.format(finalValue);
-document.getElementById('totalInvestment2').innerHTML = formatter.format(availableFunds)
-document.getElementById('totalIncrease2').innerHTML = formatter.format(difference)
+document.getElementById('totalInvestment2').innerHTML = formatter.format(availableFunds);
+
+document.getElementById('totalIncrease2').innerHTML = `${formatter.format(availableFunds)} (match) + ${formatter.format(totalIncrease)} (earnings)`
+//document.getElementById('totalIncrease2').innerHTML = `${formatter.format(lastValue)} `
 
 }
 
