@@ -18,8 +18,8 @@
 <h2 id="h2a">Qualified Plan</h2>
     Bi-Weekly Take Home Pay: $ <input type="number" id="takeHomePay"><br><br>
     Percent Towards ESPP: <input type="number" id="percentToESPP"> %<br><br>
-    Today's Stock Price: $ <input type="number" id="currentStockPrice"><br><br>
-    Stock Price Six Months Ago: $ <input type="number" id="previousStockPrice"><br><br>
+    Initial Stock Price: $ <input type="number" id="currentStockPrice"><br><br>
+    Stock Price Estimate in Six Months: $ <input type="number" id="previousStockPrice"><br><br>
     <button type="button" id="calculate" onClick="runESPP()">Calculate</button>
     <button type="button" type="button" onClick="window.location.reload();">Refresh</button><br><br>
    <div id="investment">
@@ -42,15 +42,19 @@
 <div id="main2" display="none">
     <img src="./images/calix_logo.png"> <h1>Employee Stock Purchase Plan Calculator</h1>
     <h2 id="h2b">Unqualified Plan</h2>
+    <form>
         Bi-Weekly Take Home Pay: $ <input type="number" id="takeHomePay2"><br><br>
         Percent Towards ESPP: <input type="number" id="percentToESPP2"> %<br><br>
+        Today's Stock Price: $ <input type="number" id="currentStockPrice2"><br><br>
+        <!-- Stock Price Estimate in Three Months: $ <input type="number" id="previousStockPrice2"><br><br> -->
+        Stock Price Estimate in One Year: $ <input type="number" id="oneYearPrice"><br><br>
        
-        Stock Purchase Price: $ <input type="number" id="previousStockPrice2"><br><br>
-     Estimated Stock Price in One Year: $ <input type="number" id="currentStockPrice2"><br><br>
         <button type="button" id="calculate" onClick="runUnqualifiedESPP()">Calculate</button>
-        <button type="button" type="button" onClick="window.location.reload();">Refresh</button><br><br>
+        <button type="reset" value="Reset">Clear</button><br><br>
+       
+    </form>
        <div id="investment">
-        Initial Investment<p id="totalInvestment2"></p>
+        Employee Investment<p id="totalInvestment2"></p>
        </div>
        <div id="increase">
         Money Earned<p id="totalIncrease2"></p>
